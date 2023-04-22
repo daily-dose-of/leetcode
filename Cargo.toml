@@ -1,0 +1,18 @@
+[package]
+name = "leet_rs"
+version = "0.1.0"
+description = "leetcode problems solutions in Rust."
+license = "Apache-2.0"
+keywords = ["leetcode", "problems", "solutions", "interview", "questions"]
+repository = "https://github.com/daily-dose-of/leetcode"
+documentation = "https://docs.rs/leet_rs/"
+authors = ["Mahmoud Harmouch <business@wiseai.dev>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[lib]
+doctest = true
+test = true
