@@ -1,6 +1,4 @@
 pub struct FindPivotIndexSolution1 {}
-pub struct FindPivotIndexSolution2 {}
-pub struct FindPivotIndexSolution3 {}
 
 impl FindPivotIndexSolution1 {
     /// Find the pivot index of an array, return -1 if not found.
