@@ -10,7 +10,7 @@ impl RunningSumof1dArraySolution1 {
     /// * `nums` - A mutable reference to a vector of integers.
     ///
     /// # Returns
-    /// (Vec<i32>): A mutable reference to the same array that was passed in, with each element
+    /// (`Vec<i32>`): A mutable reference to the same array that was passed in, with each element
     /// replaced by the running sum of all preceding elements in the array (including
     /// the element itself).
     ///
@@ -47,7 +47,7 @@ impl RunningSumof1dArraySolution2 {
     /// * `nums` - A vector of integers representing the input array
     ///
     /// # Returns
-    /// (Vec<i32>): A vector of integers representing the running sum of the input array
+    /// (`Vec<i32>`): A vector of integers representing the running sum of the input array
     ///
     /// # Time Complexity
     ///
@@ -80,7 +80,7 @@ impl RunningSumof1dArraySolution3 {
     /// * `nums` - A vector of integers representing the input array
     ///
     /// # Returns
-    /// (Vec<i32>): A vector of integers representing the running sum of the input array
+    /// (`Vec<i32>`): A vector of integers representing the running sum of the input array
     ///
     /// # Time Complexity
     ///
