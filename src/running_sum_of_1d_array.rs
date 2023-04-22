@@ -26,14 +26,14 @@ impl RunningSumof1dArraySolution1 {
     /// ```
     /// use leet_rs::running_sum_of_1d_array::RunningSumof1dArraySolution1;
     /// let mut nums = vec![1, 2, 3, 4];
-    /// RunningSumof1dArraySolution1::running_sum(&mut nums);
+    /// RunningSumof1dArraySolution1::running_sum(nums.clone());
     /// assert_eq!(nums, vec![1, 3, 6, 10]);
     /// ```
-    pub fn running_sum(nums: &mut Vec<i32>) {
-        let n = nums.len();
-        for i in 1..n {
+    pub fn running_sum(mut nums: Vec<i32>) -> Vec<i32> {
+        for i in 1..nums.len() {
             nums[i] += nums[i - 1];
         }
+        nums
     }
 }
 
