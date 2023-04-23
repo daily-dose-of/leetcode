@@ -3,3 +3,4 @@ pub mod find_pivot_index;
 pub mod binary_search;
 pub mod first_bad_version;
 pub mod happy_number;
+pub mod spiral_matrix;

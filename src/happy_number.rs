@@ -15,6 +15,13 @@ impl HappyNumberSolution {
     /// # Returns
     /// (`bool`): `true` if the input number is happy, `false` otherwise
     ///
+    /// # Time complexity
+    ///
+    /// O(log n) - each iteration reduces the size of the input number by a factor of 10
+    ///
+    /// # Space complexity
+    /// O(log n) - the size of the hash set used for cycle detection
+    ///
     /// # Examples
     ///
     /// ```
@@ -43,7 +50,14 @@ impl HappyNumberSolution {
     /// * `n` - A positive integer whose digits should be squared and summed
     ///
     /// # Returns
-    ///The sum of the squares of the digits of `n`
+    /// (`i32`) - The sum of the squares of the digits of `n`
+    ///
+    /// # Time complexity
+    ///
+    /// O(log n) - each iteration reduces the size of the input number by a factor of 10
+    ///
+    /// # Space complexity
+    /// O(1) - constant amount of space used for the sum and digit variables
     ///
     /// # Examples
     ///
