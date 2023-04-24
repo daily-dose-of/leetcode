@@ -6,3 +6,4 @@ pub mod running_sum_of_1d_array;
 pub mod spiral_matrix;
 pub mod where_will_the_ball_fall;
 pub mod longest_common_prefix;
+pub mod multiply_strings;
