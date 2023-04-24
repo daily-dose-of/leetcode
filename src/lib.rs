@@ -10,3 +10,4 @@ pub mod multiply_strings;
 pub mod search_insert_position;
 pub mod squares_of_a_sorted_array;
 pub mod rotate_array;
+pub mod move_zeroes;
