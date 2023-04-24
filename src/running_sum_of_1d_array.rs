@@ -37,7 +37,6 @@ impl RunningSumof1dArraySolution1 {
     }
 }
 
-
 impl RunningSumof1dArraySolution2 {
     /// Computes the running sum of the input array by iterating over the array and adding
     /// each element to the sum of the previous elements. Uses an iterator to avoid manual indexing.
@@ -67,7 +66,12 @@ impl RunningSumof1dArraySolution2 {
     /// ```
     pub fn running_sum(nums: Vec<i32>) -> Vec<i32> {
         let mut sum = 0;
-        nums.iter().map(|&x| { sum += x; sum }).collect()
+        nums.iter()
+            .map(|&x| {
+                sum += x;
+                sum
+            })
+            .collect()
     }
 }
 

@@ -1,4 +1,4 @@
-use std::cmp::{Ordering};
+use std::cmp::Ordering;
 
 pub struct BinarySearchSolution1 {}
 
@@ -27,7 +27,7 @@ impl BinarySearchSolution1 {
     pub fn search(nums: Vec<i32>, target: i32) -> i32 {
         let mut left = 0;
         let mut right = nums.len() as i32 - 1;
-        
+
         // Inclusive range left <= right to handle the case when nums has only one element.
         while left <= right {
             let mid = left + (right - left) / 2;
@@ -37,10 +37,10 @@ impl BinarySearchSolution1 {
             match nums[mid as usize].cmp(&target) {
                 Ordering::Less => left = mid + 1,
                 Ordering::Greater => right = mid - 1,
-                Ordering::Equal => return mid as i32,
+                Ordering::Equal => return mid,
             }
         }
-        
+
         -1
     }
 }

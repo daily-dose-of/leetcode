@@ -23,15 +23,16 @@ impl SpiralMatrixSolution {
     /// assert_eq!(result, vec![1, 2, 3, 6, 9, 8, 7, 4, 5]);
     /// ```
     ///
-    /// # Complexity
+    /// # Time complexity
+    /// O(m x n) where m is the number of rows and n is the number of columns in the matrix.
     ///
-    /// * Time complexity: O(m x n) where m is the number of rows and n is the number of columns in the matrix.
-    /// * Space complexity: O(m x n) where m is the number of rows and n is the number of columns in the matrix.
+    /// # Space complexity
+    /// O(m x n) where m is the number of rows and n is the number of columns in the matrix.
     pub fn spiral_order(matrix: Vec<Vec<i32>>) -> Vec<i32> {
         if matrix.is_empty() {
             return vec![];
         }
-        
+
         let mut result = Vec::new();
         let mut top = 0;
         let mut bottom = matrix.len() - 1;
@@ -50,7 +51,7 @@ impl SpiralMatrixSolution {
             }
             return result;
         }
-        
+
         while top <= bottom && left <= right {
             // Traverse Right
             for i in left..=right {
