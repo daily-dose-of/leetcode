@@ -9,3 +9,4 @@ pub mod longest_common_prefix;
 pub mod multiply_strings;
 pub mod search_insert_position;
 pub mod squares_of_a_sorted_array;
+pub mod rotate_array;
