@@ -7,3 +7,5 @@ pub mod spiral_matrix;
 pub mod where_will_the_ball_fall;
 pub mod longest_common_prefix;
 pub mod multiply_strings;
+pub mod search_insert_position;
+pub mod squares_of_a_sorted_array;
