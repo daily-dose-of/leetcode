@@ -1,48 +1,59 @@
-pub struct MoveZeroesSolution {}
+pub struct TwoSumIIInputArrayIsSortedSolution {}
 
-impl MoveZeroesSolution {
-    /// Moves all zeroes in the input vector to the end while maintaining the relative order of non-zero elements.
+impl TwoSumIIInputArrayIsSortedSolution {
+    /// Given a sorted array of integers `numbers`, finds two numbers such that they add up to a specific target number.
+    /// Let these two numbers be numbers[index1] and numbers[index2] where 1 <= index1 < index2 <= numbers.len().
     ///
     /// # Arguments
     ///
-    /// * `nums` - The vector of integers to be modified.
+    /// * `numbers` - A sorted vector of integers.
+    /// * `target` - The target sum.
+    ///
+    /// # Returns
+    /// A vector containing the indices of the two numbers that add up to the target, in the form [index1, index2].
     ///
     /// # Examples
     ///
     /// ```
-    /// use leet_rs::move_zeroes::MoveZeroesSolution;
+    /// use leet_rs::two_sum_input_array_sorted::TwoSumIIInputArrayIsSortedSolution;
     ///
-    /// let mut nums = vec![0, 1, 0, 3, 12];
+    /// let numbers = vec![2, 7, 11, 15];
+    /// let target = 9;
+    /// assert_eq!(TwoSumIIInputArrayIsSortedSolution::two_sum(numbers, target), vec![1, 2]);
     ///
-    /// MoveZeroesSolution::move_zeroes(&mut nums);
+    /// let numbers = vec![2, 3, 4];
+    /// let target = 6;
+    /// assert_eq!(TwoSumIIInputArrayIsSortedSolution::two_sum(numbers, target), vec![1, 3]);
     ///
-    /// assert_eq!(nums, vec![1, 3, 12, 0, 0]);
+    /// let numbers = vec![-1, 0];
+    /// let target = -1;
+    /// assert_eq!(TwoSumIIInputArrayIsSortedSolution::two_sum(numbers, target), vec![1, 2]);
     /// ```
     ///
     /// # Time complexity
-    /// O(n), where n is the length of the input vector.
+    /// O(n) - Since we are iterating the array once in a single while loop.
     ///
     /// # Space complexity
-    /// O(1), as it operates on the input vector in-place.
-    pub fn move_zeroes(nums: &mut Vec<i32>) {
-        // initialize a variable to keep track of the index where non-zero elements will be placed
-        let mut non_zero_idx = 0;
-        // loop through each element in the array
-        for current_idx in 0..nums.len() {
-            // if the element is non-zero
-            if nums[current_idx] != 0 {
-                // place it at the current index
-                nums[non_zero_idx] = nums[current_idx];
-                // increment the index for the next non-zero element
-                non_zero_idx += 1;
+    /// O(1) - Since we are only using constant extra space for storing two pointers.
+    pub fn two_sum(numbers: Vec<i32>, target: i32) -> Vec<i32> {
+        // Initialize left pointer to first element
+        let mut left = 0;
+        // Initialize right pointer to last element
+        let mut right = numbers.len() - 1;
+        // Continue until left pointer is greater than or equal to right pointer
+        while left < right {
+            // Compute the sum of the left and right elements
+            let sum = numbers[left] + numbers[right];
+            // If the sum is equal to the target, return the indices
+            if sum == target {
+                return vec![left as i32 + 1, right as i32 + 1];
+            } else if sum < target { // If the sum is less than the target, move the left pointer to the right
+                left += 1;
+            } else { // If the sum is greater than the target, move the right pointer to the left
+                right -= 1;
             }
         }
-        // loop through the remaining indices
-        while non_zero_idx < nums.len() {
-            // set the value at the current index to zero
-            nums[non_zero_idx] = 0;
-            // increment the index for the next zero element
-            non_zero_idx += 1;
-        }
+        // If no indices are found, return an empty vector
+        vec![]
     }
 }
