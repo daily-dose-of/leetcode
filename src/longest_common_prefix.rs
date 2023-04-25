@@ -33,18 +33,24 @@ impl LongestCommonPrefixSolution {
     /// # Space complexity
     /// O(m) where `m` is the length of the shortest string.
     pub fn longest_common_prefix(strs: Vec<String>) -> String {
+        // If `strs` is empty, return an empty string
         if strs.is_empty() {
             return String::new();
         }
+        // Initialize `prefix` as the first string in `strs`
         let mut prefix = strs[0].clone();
+        // Loop through each string `s` in `strs`
         for s in strs {
+            // While `s` does not start with `prefix`, remove the last character from `prefix`
             while !s.starts_with(&prefix) {
                 prefix.pop();
+                // If `prefix` becomes empty, return an empty string
                 if prefix.is_empty() {
                     return String::new();
                 }
             }
         }
+        // Return the final `prefix` string
         prefix
     }
 }

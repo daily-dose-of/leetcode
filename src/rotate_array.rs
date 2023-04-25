@@ -18,12 +18,10 @@ impl RotateArraySolution {
     /// ```
     ///
     /// # Time Complexity
-    ///
-    /// The time complexity of this function is O(n), where n is the length of the vector `nums`.
+    /// O(n), where n is the length of the vector `nums`.
     ///
     /// # Space Complexity
-    ///
-    /// The space complexity of this function is O(1), since it performs the rotation in place.
+    /// O(1), since it performs the rotation in place.
     pub fn rotate(nums: &mut Vec<i32>, k: i32) {
         // Calculate the effective rotation amount based on the length of the vector.
         let k = k as usize % nums.len();

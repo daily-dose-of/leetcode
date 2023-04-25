@@ -12,3 +12,5 @@ pub mod squares_of_a_sorted_array;
 pub mod rotate_array;
 pub mod move_zeroes;
 pub mod two_sum_input_array_sorted;
+pub mod reverse_string;
+pub mod reverse_words_in_a_string_iii;
