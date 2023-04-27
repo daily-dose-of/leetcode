@@ -65,7 +65,7 @@ impl MultiplyStringsSolution {
     /// # Space complexity
     /// O(m + n)
     pub fn multiply(num1: String, num2: String) -> String {
-         // Convert input strings to byte arrays for faster access
+        // Convert input strings to byte arrays for faster access
         let n1 = num1.as_bytes();
         let n2 = num2.as_bytes();
 

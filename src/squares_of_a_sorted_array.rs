@@ -32,13 +32,13 @@ impl SquaresSortedArraySolution {
         let mut right = n as i32 - 1;
         // Initialize an index for the result vector
         let mut index = n as i32 - 1;
-        
+
         // Loop until the left and right pointers meet or cross
         while left <= right {
             // Get the absolute values of the numbers pointed to by the left and right pointers
             let left_abs = nums[left as usize].abs();
             let right_abs = nums[right as usize].abs();
-            
+
             // If the absolute value of the number pointed to by the left pointer is greater
             if left_abs > right_abs {
                 // Square the number pointed to by the left pointer and assign it to the result vector
@@ -51,11 +51,11 @@ impl SquaresSortedArraySolution {
                 // Move the right pointer to the left
                 right -= 1;
             }
-            
+
             // Move the index of the result vector to the left
             index -= 1;
         }
-        
+
         // Return the result vector
         result
     }

@@ -77,7 +77,6 @@ impl ReverseStringSolution2 {
     }
 }
 
-
 impl ReverseStringSolution3 {
     /// Reverses the order of characters in a string in-place using the two pointers approach.
     ///

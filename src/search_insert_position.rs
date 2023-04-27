@@ -35,7 +35,7 @@ impl SearchInsertPositionSolution {
         let mut left = 0 as isize;
         // Initialize the right pointer to the last index in the array
         let mut right = nums.len() as isize - 1;
-        
+
         // loop as long as left pointer is less than or equal to the right pointer
         while left <= right {
             // calculate the middle pointer

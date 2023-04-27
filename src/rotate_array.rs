@@ -28,27 +28,27 @@ impl RotateArraySolution {
 
         // Initialize a counter to keep track of the number of elements that have been rotated.
         let mut count = 0;
-        
+
         // Iterate over each index in the vector.
         for start in 0..nums.len() {
             // Initialize variables to keep track of the current element and the previous element in the rotation.
             let mut current = start;
             let mut prev = nums[start];
-            
+
             // Continue rotating elements until all elements have been rotated.
             while count < nums.len() {
                 // Calculate the index of the next element to be rotated.
                 let next = (current + k) % nums.len();
-                
+
                 // Swap the current and next elements.
                 let temp = nums[next];
                 nums[next] = prev;
                 prev = temp;
-                
+
                 // Update the current index and the number of elements that have been rotated.
                 current = next;
                 count += 1;
-                
+
                 // If we've completed a full rotation cycle, break out of the inner loop.
                 if start == current {
                     break;

@@ -47,9 +47,11 @@ impl TwoSumIIInputArrayIsSortedSolution {
             // If the sum is equal to the target, return the indices
             if sum == target {
                 return vec![left as i32 + 1, right as i32 + 1];
-            } else if sum < target { // If the sum is less than the target, move the left pointer to the right
+            } else if sum < target {
+                // If the sum is less than the target, move the left pointer to the right
                 left += 1;
-            } else { // If the sum is greater than the target, move the right pointer to the left
+            } else {
+                // If the sum is greater than the target, move the right pointer to the left
                 right -= 1;
             }
         }

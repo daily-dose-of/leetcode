@@ -33,7 +33,7 @@ impl ReverseWordsStringIIISolution {
         let mut chars = s.chars().collect::<Vec<_>>();
         let mut left = 0;
         let mut right = 0;
-        
+
         while right < chars.len() {
             if chars[right] == ' ' {
                 // Reverse the characters in the current word
@@ -42,10 +42,10 @@ impl ReverseWordsStringIIISolution {
             }
             right += 1;
         }
-        
+
         // Reverse the characters in the last word
         chars[left..right].reverse();
-        
+
         // Convert the characters back to a string
         chars.into_iter().collect()
     }
