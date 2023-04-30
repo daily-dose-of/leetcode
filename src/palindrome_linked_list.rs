@@ -111,7 +111,7 @@ impl PalindromeLinkedListSolution {
         if let Some(node) = head {
             // Recursively reverse the rest of the linked list
             Self::reverse_list(&node.next, reversed_half);
-            
+
             // Create a new node with the same value as the current node
             let mut new_node = ListNode::new(node.val);
 

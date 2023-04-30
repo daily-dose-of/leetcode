@@ -17,7 +17,7 @@ impl Solution {
     /// (`Option<Box<ListNode>>`) - A linked list with odd-indexed nodes appearing before even-indexed nodes
     ///
     /// # Examples
-    /// 
+    ///
     /// ```
     /// use leet_rs::remove_nth_node_from_end_of_list::ListNode;
     /// use leet_rs::odd_even_linked_list::Solution;
@@ -55,7 +55,6 @@ impl Solution {
     /// # Space complexity
     /// O(1), since only a constant amount of extra space is required.
     pub fn odd_even_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-        
         // Edge case
         if head.is_none() {
             return None;
@@ -63,19 +62,19 @@ impl Solution {
 
         // Create two empty linked lists for odd and even nodes
         let (mut odd, mut even) = (ListNode::new(0), ListNode::new(0));
-        
+
         // Create mutable references for the last nodes in each list
         let (mut odd_ref, mut even_ref) = (&mut odd, &mut even);
-        
+
         // Initialize a counter for odd/even nodes
         let mut count = 1;
-        
+
         // Iterate over the input linked list
         let mut current = head;
         while let Some(mut node) = current {
             // Move ownership of the next node
             current = node.next.take();
-            
+
             // Insert the node at the end of the appropriate list
             if count % 2 == 1 {
                 odd_ref.next = Some(node);
@@ -86,7 +85,7 @@ impl Solution {
             }
             count += 1;
         }
-        
+
         // Link the two lists together
         odd_ref.next = even.next.take();
 

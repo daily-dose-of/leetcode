@@ -68,7 +68,7 @@ impl Solution {
         // Recursively sort the left and right halves and then merge them
         Self::merge(
             Self::sort_list(even_list.next.take()),
-            Self::sort_list(odd_list.next.take())
+            Self::sort_list(odd_list.next.take()),
         )
     }
 
@@ -82,20 +82,23 @@ impl Solution {
     /// (`Option<Box<ListNode>>`) - The head of the merged linked list.
     ///
     /// # Time complexity
-    /// 
+    ///
     /// O(n), where n is the total number of nodes in the two input linked lists.
     ///
     /// # Space complexity
     ///
     /// O(n), where n is the total number of nodes in the two input linked lists.
-    fn merge(mut left: Option<Box<ListNode>>, mut right: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    fn merge(
+        mut left: Option<Box<ListNode>>,
+        mut right: Option<Box<ListNode>>,
+    ) -> Option<Box<ListNode>> {
         // Create a new dummy node to act as the head of the sorted list
         let mut sorted_list = ListNode::new(-1);
         // Create a mutable reference to the back of the sorted list
         let mut sorted_back = &mut sorted_list;
 
         // While both lists are not empty
-        while let (Some(ref mut left_node), Some(ref mut right_node)) = (&mut left , &mut right) {
+        while let (Some(ref mut left_node), Some(ref mut right_node)) = (&mut left, &mut right) {
             // If left node value is less than right node value
             if left_node.val < right_node.val {
                 // Remove the next node from the left list and append it to the sorted list
