@@ -16,3 +16,5 @@ pub mod squares_of_a_sorted_array;
 pub mod two_sum_input_array_sorted;
 pub mod where_will_the_ball_fall;
 pub mod palindrome_linked_list;
+pub mod odd_even_linked_list;
+pub mod sort_list;
